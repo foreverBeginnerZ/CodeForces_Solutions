@@ -18,12 +18,11 @@ int main()
     sort(v.begin(),v.end()); //SORTING
 
     for(int i=0; v.size()-(i+1)!=0;i++ )
-    {   int x=*v.end();
+    {   int x=*(v.end()-1);
         if(v[i]+x<=4)
         {
             counter++;
-            v.erase(v.begin()+*v.end());
-            cout<<"$";
+            v.erase(v.begin()+*(v.end()-1) );
         }
         else
         {
@@ -31,10 +30,10 @@ int main()
             {
                 counter++;
                 if(v.size()-(i+1)==0) break;
-                v.erase(v.begin()+*v.end());
-                cout<<"$";
+                v.erase(v.begin()+*(v.end()-1));
+
             }
-            cout<<"$";
+            
         }
 
     }
